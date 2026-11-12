@@ -1,0 +1,82 @@
+/* Shared retro cooking-game UI. Keep character art and app content independent. */
+@font-face{font-family:AtelierJua;src:url('assets/Jua-Regular.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+:root{--paper:#fff4e3;--ink:#624157;--muted:#92647a;--accent:#e4a1b6;--accent-dark:#86546f;--line:#cba1b4;--blush:#f8d9e4;--lavender:#e9dcf2;font-family:AtelierJua,'Malgun Gothic',sans-serif;background:#e5d4ed;color:var(--ink)}
+body{background-color:#e5d4ed;background-image:radial-gradient(ellipse at 10% 10%,#ffe6dc 0,transparent 50%),radial-gradient(ellipse at 90% 90%,#f6d5e2 0,transparent 50%),radial-gradient(#fff6ec 1px,transparent 1px);background-size:auto,auto,22px 22px}
+#app{padding-left:10px;padding-right:10px;background:linear-gradient(165deg,#ffeadf,#f2dded 62%,#eaddf2);box-shadow:0 0 0 2px #b58ba4,0 14px 60px #7d5a7a30}
+.app-header{height:61px;background:transparent;padding:7px 3px 9px;gap:10px}.brand{font-family:AtelierJua,'Malgun Gothic',sans-serif;font-size:23px;letter-spacing:.5px;color:#75445f;text-shadow:0 2px #fff6e7;line-height:1.12}.brand small{font-family:AtelierJua,sans-serif;letter-spacing:2px;font-size:9px;color:#ab7487;text-shadow:none;margin-top:3px}
+.icon-button{width:37px;height:36px;flex-shrink:0;background:linear-gradient(#fff9ea,#f9dfdd);color:#87516e;border:2px solid #b5839c;border-radius:12px;box-shadow:0 2px 0 #c79aaf,inset 0 1px #fff;font-size:23px;line-height:1}
+.scene{border:3px solid #98677e;border-radius:15px 15px 12px 12px;box-shadow:0 2px 0 #fff8e9,inset 0 0 0 2px #fff6e8;background:#e9c6b1}
+.scene-art{border-radius:10px}.chapter{left:9px;right:9px;top:10px;gap:8px}.chapter span{background:#fff2dcee;border:1.5px solid #b58c80;border-radius:5px 5px 9px 5px;padding:5px 9px;color:#8b5869;font-size:13px;box-shadow:0 2px #cba69550}.chapter span:first-child{transform:rotate(-2deg)}.chapter span:last-child{transform:rotate(1deg)}
+.landing-title{padding:42px 17px 18px;background:linear-gradient(transparent,#624761d9);color:#fff3df}.landing-title>span{font-family:AtelierJua,sans-serif;color:#ffdda9;letter-spacing:2px;font-size:12px;text-shadow:0 1px #684860}.landing-title h1{font-family:AtelierJua,sans-serif;font-size:31px;font-weight:400;line-height:1.28;letter-spacing:.3px;color:#fff6e0;text-shadow:2px 2px 0 #76536b,-1px -1px 0 #76536b}.landing-title p{font-size:13px;color:#ffe3c8;letter-spacing:.1px}
+.conversation{background:#fff7e9;border:2px solid #a77a91;border-radius:13px;margin:15px 0 0;padding:20px 14px 9px;min-height:99px;box-shadow:inset 0 0 0 3px #fffdf3,0 3px 0 #d4afc4;position:relative}
+.speaker{position:absolute;left:11px;right:10px;top:-13px;display:flex;align-items:center;justify-content:space-between;margin:0;letter-spacing:.2px;font-size:13px;color:#784961;line-height:1.2}.speaker-name{display:inline-block;background:linear-gradient(#ffebea,#f2c5d4);border:2px solid #b4839a;padding:4px 12px;border-radius:7px;box-shadow:inset 0 1px #fff6ef}.speaker button{width:28px;height:28px;border:2px solid #b4839a;color:#875774;background:#fff3dc;box-shadow:0 1px #c7a0b4;font:16px AtelierJua,sans-serif}
+.conversation h2{font-family:AtelierJua,sans-serif;font-weight:400;line-height:1.38;letter-spacing:0;font-size:19px;color:#6d465e;margin:0}.conversation p{font-family:AtelierJua,sans-serif;font-size:13px;line-height:1.45;letter-spacing:0;color:#9a7182;margin:5px 0 0}.progress-track{background:#ead8df;height:5px;margin-top:8px;border-radius:4px}.progress-track>div{background:linear-gradient(90deg,#db94ad,#b99bd2);border-radius:4px}
+.controls{padding:10px 2px 10px;min-height:70px}.primary{position:relative;min-height:47px;background:linear-gradient(180deg,#ffdfdf 0%,#f3bfd0 35%,#e6a0ba 100%);border:2px solid #95617e;border-radius:13px;color:#704261;box-shadow:0 4px 0 #986a86,inset 0 2px 0 #fff4e8;font-family:AtelierJua,sans-serif;font-size:17px;font-weight:400;letter-spacing:.2px;line-height:1.3;padding:11px 31px;text-shadow:0 1px 0 #ffe8e8;transition:transform .1s,box-shadow .1s}
+.primary::before{content:'✦';position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#fff5d5;font-size:17px;text-shadow:1px 1px #bb8497}.primary::after{content:'›';position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:23px;color:#9a6681}.primary:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 #986a86,inset 0 1px 0 #ffe4e7;background:linear-gradient(#f4c2d1,#e4a2bb)}
+.secondary{border:2px solid #b890a6;background:linear-gradient(#fff5e9,#eadff0);color:#7c5675;border-radius:11px;box-shadow:0 2px 0 #c6a4bd;font-size:14px}.quiet,.back-link{font-family:AtelierJua,sans-serif;color:#95718c;font-size:13px}.control-row select{border:2px solid #b88ca3;background:#fff5e7;color:#805676;border-radius:11px;font:17px AtelierJua,sans-serif;box-shadow:0 3px #d1acbf}
+.bottom-nav{height:44px;gap:8px;border:0;background:transparent;padding:3px 4px 6px}.bottom-nav button{font-family:AtelierJua,sans-serif;font-size:13px;color:#a17d97;background:#efddec;border-radius:9px;border:1.5px solid #d3afc8;line-height:1;font-weight:400}.bottom-nav button.active{color:#794b68;font-weight:400;border-color:#b2849c;background:linear-gradient(#fff5e4,#f7d9df);box-shadow:0 2px #c49db4}.bottom-nav button.active:before{display:none}
+.gesture-guide{font-family:AtelierJua,sans-serif;font-size:13px;color:#96617b;border:1px solid #d6acb4;border-radius:6px;background:#fff4dded;box-shadow:2px 3px 0 #ac768e38}.gesture-guide::after{border-bottom-color:#ac7a87}.food-piece{border:2px solid #b8909b;background:linear-gradient(#fff5e5e8,#f9dfd5eb);box-shadow:0 3px 0 #b78e9e88;border-radius:11px}.food-piece span{font-family:AtelierJua,sans-serif;color:#8c627a;font-size:13px}.scene-toast{font-family:AtelierJua,sans-serif;font-size:15px;color:#84546f;border:2px solid #c19aa6;background:#fff2dfee;box-shadow:0 3px 0 #b88b9b66}
+dialog{border:3px solid #a37a95;border-bottom:0;border-radius:21px 21px 0 0;background:linear-gradient(#fff4e7,#f5e5ee);padding:0 18px max(22px,env(safe-area-inset-bottom));box-shadow:0 -4px 0 #fff2df,0 -15px 55px #65476445}dialog::backdrop{background:#634d6c70;backdrop-filter:blur(3px)}.sheet-header{background:#fff3e7;border-bottom:1px solid #e5c9d4;padding:12px 0 10px;margin-bottom:12px}.sheet-header h2{font-family:AtelierJua,sans-serif;font-weight:400;font-size:24px;color:#81546e;letter-spacing:.2px}.sheet-header .icon-button{width:34px;height:34px;font-size:23px}#sheet-body{font-family:AtelierJua,'Malgun Gothic',sans-serif;font-size:14px;color:#805970;line-height:1.65}#sheet-body h3{font-weight:400;font-size:18px;color:#82536e}#sheet-body .muted{color:#a07a8b;font-size:13px}#sheet-body a{color:#94688e}
+.flavor,.food-card{border:2px solid #d0a5b8;background:linear-gradient(#fffaf0,#fce7e4);box-shadow:0 3px #dfc1d1;border-radius:12px}.flavor{min-height:98px;padding:11px}.flavor strong{font-family:AtelierJua,sans-serif;font-size:17px;font-weight:400;color:#88536e}.flavor small{font-family:AtelierJua,sans-serif;font-size:13px;color:#a2788b}.flavor[aria-pressed=true]{border-color:#aa7291;background:linear-gradient(#ffe6e5,#f2c3d9);box-shadow:0 3px #bc8da8}.food-card span{font-size:14px;color:#8a5874}.filter-bar button{font-family:AtelierJua,sans-serif;border:1.5px solid #c9a3bc;border-radius:10px;background:linear-gradient(#f7ebf7,#e8d5ed);color:#92708c;font-size:13px;box-shadow:0 2px #d4b6ce}.filter-bar button.selected{border-color:#b27f9b;background:linear-gradient(#ffdedf,#eeb6ce);color:#79506a}.time-tag{color:#b16c8a;font-family:AtelierJua,sans-serif;font-size:16px}.food-hero strong{font-size:21px;font-weight:400}.taste-row>div{background:#f5e0e8;border:1px solid #dbb8ca;font-size:14px}.taste-row small{color:#a37a90;font-size:13px}.notice{background:#f9e5db;border-color:#c796ac;border-left-width:3px;border-radius:7px;font-size:13px;color:#936677}details{border-color:#dec2d0}summary{font-size:13px;color:#a27190}details p,details li{font-size:13px}.recipe-grid{font-size:15px;color:#885971}.menu-list button{font-family:AtelierJua,sans-serif;font-size:16px;background:linear-gradient(#fff7e9,#f7e2e9);border:2px solid #d0a8bd;box-shadow:0 2px #dfc0d3;border-radius:12px}.form-field{font-family:AtelierJua,sans-serif;font-size:14px}.form-field input,.form-field textarea{border:2px solid #d0acbd;background:#fff9ef;font-family:AtelierJua,sans-serif;color:#885971}.saved{color:#95688f;background:#ede0f2;border:1px solid #cfb1d4}
+@media(max-height:690px){.app-header{height:51px}.brand{font-size:21px}.scene{border-radius:11px}.conversation{margin-top:13px;padding:17px 12px 8px;min-height:88px}.conversation h2{font-size:17px}.conversation p{font-size:13px}.controls{min-height:64px;padding:9px 0 10px}.primary{min-height:44px;font-size:15px;padding-top:10px;padding-bottom:10px}.bottom-nav{height:39px;gap:6px}.landing-title h1{font-size:24px}.landing-title p{font-size:13px}.chapter span{font-size:12px;padding:4px 6px}}
+/* Fixed-stage character cooking game, v21. */
+.scene-art{display:none}.scene{min-height:0;width:min(100%,calc((100dvh - 278px)*.666667));align-self:center;flex:1}.scene[aria-busy=true] .gesture-guide{opacity:0}.gesture-guide{top:auto;bottom:7%;transform:translateX(-50%);font-size:13px;padding:6px 10px}.gesture-guide::after{display:none}.resume-button{display:block;min-height:38px;margin:7px auto 0;padding:6px 18px;background:transparent;font-size:13px;color:#8b657e;text-decoration:underline;text-underline-offset:4px}.is-home:has(.resume-button) .scene{width:min(100%,calc((100dvh - 320px)*.666667))}.is-home .bottom-nav{display:none}.is-home .conversation{min-height:86px}.bottom-nav{height:54px}.bottom-nav button{min-height:44px}.chapter{top:7px;left:7px;right:7px}.chapter span{font-size:12px;padding:4px 6px}.landing-title h1{font-size:27px}.landing-title p{display:none}.primary:disabled{opacity:.75}.scene[aria-busy=true]{cursor:progress}
+@media(max-height:690px){.scene{width:min(100%,calc((100dvh - 263px)*.666667))}.is-home:has(.resume-button) .scene{width:min(100%,calc((100dvh - 286px)*.666667))}.bottom-nav{height:50px;padding-bottom:3px}.conversation{min-height:82px}.conversation h2{font-size:16px}.landing-title h1{font-size:23px}}
+/* Safe whole-character preview while animation frames are prepared. */
+.scene-art{display:block}#effects{visibility:hidden}
+/* Whole-body cel animation replaces discarded joint rig. */
+.scene-art{display:none}#effects{visibility:visible}
+
+/* One next-action button; the practical recipe stays beside the result. */
+.scene{width:min(100%,calc((100dvh - 230px)*.666667))}
+.is-home:has(.resume-button) .scene{width:min(100%,calc((100dvh - 270px)*.666667))}
+.is-result .conversation{min-height:116px;padding-bottom:12px}
+.is-result .speaker button{width:auto;min-width:115px;height:30px;border-radius:8px;padding:3px 9px;font-size:13px}
+.taste-note{position:absolute;bottom:20%;left:50%;transform:translateX(-50%) rotate(-2deg);padding:5px 13px;max-width:90%;white-space:nowrap;border:1px solid #b68c83;background:#fff7e9ed;color:#89566b;border-radius:6px;font:15px AtelierJua,sans-serif;pointer-events:none;box-shadow:2px 3px #ac7a8730;animation:taste-arrival .35s ease-out}
+@keyframes taste-arrival{from{opacity:0}to{opacity:1}}
+@media(max-height:690px){.scene{width:min(100%,calc((100dvh - 215px)*.666667))}.is-result .scene{width:min(100%,calc((100dvh - 244px)*.666667))}.is-home:has(.resume-button) .scene{width:min(100%,calc((100dvh - 245px)*.666667))}.is-result .conversation{min-height:112px}.taste-note{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.taste-note{animation:none}}
+
+/* Preserve the illustration aspect ratio without stretching the character or food. */
+.scene{flex:0 1 auto;aspect-ratio:2/3;margin-top:auto;margin-bottom:auto}
+
+/* Reuse the stage's tight sprite bounds; atlas neighbours never appear in food cards. */
+.food-icon{display:block;overflow:hidden;flex:none}.food-card .food-icon{width:65px;height:65px;margin:0 auto 5px}.food-hero .food-icon{width:90px;height:90px}
+
+/* Small-screen sheets use complete pages instead of nested scrolling. */
+#sheet[open]{display:flex;flex-direction:column;height:min(760px,calc(100dvh - 12px));max-height:calc(100dvh - 12px);overflow:hidden;padding:0 14px max(10px,env(safe-area-inset-bottom));border-width:1px;border-bottom:0;box-shadow:0 -8px 32px #65476435;}
+#sheet .sheet-header{position:static;flex:none;gap:8px;margin-bottom:8px;padding:10px 0 8px;min-height:54px}
+#sheet .sheet-header h2{font-size:20px;line-height:1.25}
+#sheet-body{flex:1;min-height:0;overflow:hidden;display:flow-root;overflow-wrap:anywhere}
+#sheet-body>:first-child{margin-top:0}#sheet-body>:last-child{margin-bottom:0}
+#sheet-body .recipe-grid{margin:5px 0;gap:5px 14px}
+#sheet-body .flavors,#sheet-body .food-grid{margin:7px 0;gap:8px}
+#sheet-body .menu-list{margin:7px 0}
+#sheet-body ol,#sheet-body ul{margin:8px 0;padding-left:23px}
+#sheet-body .muted{font-size:13px}
+.sheet-fixed-actions{flex:none;display:grid;gap:7px;padding-top:7px}
+.sheet-fixed-actions:empty{display:none}
+.sheet-fixed-actions .primary{width:100%;min-height:44px;margin:0}
+.sheet-fixed-actions .pager{min-height:40px}.sheet-fixed-actions .pager button{min-height:40px;padding:5px 12px;font-size:13px}
+.sheet-pagination{flex:none;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:42px;border-top:1px solid #dfc1d1;margin-top:6px;color:#92647a;font-size:13px}
+.sheet-pagination button{min-width:48px;min-height:40px;border-radius:8px;background:#f3dfeb;color:#805970;font-size:20px}
+.sheet-more,.sheet-back{display:block;text-align:left;width:100%;padding:11px 5px;min-height:42px;border-top:1px solid #dfc1d1;background:transparent;color:#86546f;font-size:14px;line-height:1.5}
+@media(max-height:600px){
+ #sheet[open]{padding-left:12px;padding-right:12px}
+ #sheet .sheet-header{min-height:49px;padding:7px 0;margin-bottom:6px}
+ #sheet .sheet-header h2{font-size:18px}
+ #sheet-body{font-size:14px;line-height:1.5}
+ #sheet-body .food-card{min-height:81px;padding:5px 3px}
+ #sheet-body .food-card .food-icon{width:52px;height:52px;margin-bottom:2px}
+ #sheet-body .flavor{min-height:84px;padding:8px}
+ #sheet-body .flavor strong{font-size:15px}
+ #sheet-body .flavor small{margin-top:2px}
+ #sheet-body .food-hero{gap:10px;margin:5px 0 9px}
+ #sheet-body .food-hero .food-icon{width:62px;height:62px}
+ #sheet-body .taste-row{margin:8px 0}
+ #sheet-body .taste-row>div{padding:8px}
+ #sheet-body .notice{padding:8px 10px;margin:8px 0}
+ #sheet-body .filter-bar{gap:5px}
+ #sheet-body p{margin:7px 0 10px}
+}
+/* 2026-11-11 초보자 개선 */.speaker button{width:auto;min-width:28px;padding:0 10px;border-radius:14px;font-size:14px}.food-card{position:relative}.food-card .food-time{display:block;font-size:13px;color:#a07a8b;line-height:1.2;margin-top:1px}.food-card .lab-tag{position:absolute;top:4px;right:4px;font-style:normal;font-size:13px;line-height:1.3;background:#f6d5e2;color:#86546f;border-radius:6px;padding:1px 5px}.home-links{display:flex;justify-content:center;gap:2px;flex-wrap:wrap}.home-links .resume-button{margin:4px 0 0}
